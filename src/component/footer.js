@@ -1,16 +1,22 @@
-import {  faMailBulk, faShare, faXmark } from "@fortawesome/free-solid-svg-icons";
+import {  faMailBulk, faShare, faXmark,faLaptop, faPaperPlane  } from "@fortawesome/free-solid-svg-icons";
+import { useEffect } from "react";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 // import {faFacebook} from "@fortawesome/free-brands-svg-icons";
 import { faCheck } from "@fortawesome/free-solid-svg-icons/faCheck";
-import { faPhone } from "@fortawesome/free-solid-svg-icons/faPhone";
+import { faPhone} from "@fortawesome/free-solid-svg-icons/faPhone";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 
 import React from "react";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons/faTwitter";
 const Footer = () => {
+    useEffect(() =>{
+        AOS.init({duration:2000})
+    })
   return (
     <div>
-      <section className="session bg-slate-100 py-5">
+      <section className="session bg-slate-100 py-5" id="pricing" >
         <div className="container mx-auto">
           <div className="heading my-3">
             <h3 className="text-yellow-500 font-semibold text-center">
@@ -34,9 +40,9 @@ const Footer = () => {
             </div>
             <p className="font-semibold">Yearly</p>
           </div>
-          <div className="users">
+          <div className="users" >
             <div className="grid grid-cols-1 md:grid-cols-2  place-content-center place-items-center">
-                <div className="standard bg-white shadow-md my-4 rounded-lg p-5 w-2/3">
+                <div className="standard bg-white shadow-md my-4 rounded-lg p-5 w-2/3 hover:bg-slate-100 " data-aos="fade-down">
                     <h3 className="text-xl text-center font-semibold ">Standard User</h3>
                     <p className="text-center"><span className="text-2xl text-blue-700 ">$40/</span>month</p>
                     <div className="border my-5"></div>
@@ -66,7 +72,7 @@ const Footer = () => {
                    <button className=" border border-blue-400 rounded-lg hover:bg-blue-500 px-3 py-3 hover:text-white transition-all">Enroll now</button>
                    </div>
                 </div>
-                <div className="standard bg-white shadow-md my-4 rounded-lg p-5 w-2/3">
+                <div className="standard bg-white shadow-md my-4 rounded-lg p-5 w-2/3 hover:bg-slate-100" data-aos="fade-up">
                     <h3 className="text-xl text-center font-semibold ">Premium User</h3>
                     <p className="text-center"><span className="text-2xl text-blue-700 ">$500/</span>month</p>
                     <div className="border my-5"></div>
@@ -100,11 +106,16 @@ const Footer = () => {
           </div>
         </div>
       </section>
-      <footer className="py-6 bg-sky-700 text-white">
+      <footer className="py-6 bg-sky-700 text-white" id="contact">
         <div className="container mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-                <div className="firstContent mx-auto">
-                    <h1 className="mb-3"><a className="text-xl md:text-3xl " href="#">hr-tutor</a></h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4" data-aos="fade-down">
+                <div className="firstContent mx-auto mb-4 md:mb-0 ">
+                    <h1 className="mb-3 flex gap-1 items-center">
+                    <FontAwesomeIcon icon={faLaptop} className="text-xl text-yellow-400"/>
+
+                        <a className="text-xl md:text-3xl text-yellow-400 " href="#">hr-tutor</a>
+
+                        </h1>
                     <p>St Fosilaa,20 forst street,4th <br />
                     Mexico city,Mexico 200015</p>
                     <div className="socialMedia">
@@ -125,7 +136,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <div className="secondContent mx-auto">
+                <div className="secondContent mx-auto mb-4 md:mb-0">
                     <h2 className="text-medium text-2xl mb-3">Categories</h2>
                     
                    <div className="flex flex-col gap-3">
@@ -135,7 +146,7 @@ const Footer = () => {
                    <p>Mangement</p>
                    </div>
                 </div>
-                <div className="ThirdContent mx-auto">
+                <div className="ThirdContent mx-auto mb-4 md:mb-0">
                     <h2 className="text-medium text-2xl mb-3">Useful Links</h2>
                     
                    <div className="flex flex-col gap-3">
@@ -145,11 +156,11 @@ const Footer = () => {
                    <p>Privacy Policy</p>
                    </div>
                 </div>
-                <div className="fouthContent mx-auto">
+                <div className="fouthContent mx-auto mb-4 md:mb-0">
                     <h3 className="text-2xl ">Stay Connected</h3>
                     <div className="mt-2 bg-white rounded-lg flex items-center px-1">
-                        <input type="email" placeholder="Email address" name="" id="" className="bg-transparent" />
-                        <button><FontAwesomeIcon icon={faShare} className="bg-sky-700 p-3 rounded-full mt-1"/></button>
+                        <input type="email" placeholder="Email address" name="" id="" className="bg-transparent border-0" />
+                        <button><FontAwesomeIcon icon={faPaperPlane} className="bg-sky-700 p-3 rounded-full mt-1"/></button>
                     </div>
                     <div>
                         <div className="flex gap-3 items-center mt-3">
@@ -164,7 +175,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className="border my-4"></div>
-            <p className="text-center">All right reserved <a href="https:\\github\Dev-Ruqoyah "  className="text-yellow-200">codewithRuqoyyah</a></p>
+            <p className="text-center">All right reserved <a href="hhttps://github.com/Dev-Ruqoyah "  className="text-yellow-200">codewithRuqoyyah</a></p>
         </div>
       </footer>
     </div>

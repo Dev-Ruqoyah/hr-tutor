@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 import Counter from "./counter";
 import Counter2 from "./counter2";
 import AOS from 'aos';
@@ -29,12 +29,16 @@ import {
 //       AOS.init();
 //     }, [])
 const Home = () => {
+  useEffect(() =>{
+    AOS.init({duration: 2000})
+  },[])
   return (
-    <div className="home">
+   
+    <div className="home overflow-x-hidden">
       {/* section1 */}
-      <section style={{}} className=" bg-slate-100 md:pb-20">
-        <div className="container mx-auto mt-2">
-          <div className="grid grid-cols-1 md:grid-cols-2 px-3 md:px-9">
+      <section style={{}} className=" bg-slate-100 md:pb-20 mt-24" data-aos="fade-right" id="hero">
+        <div className="container mx-auto mt-2  md:mt-5 lg:mt-14">
+          <div className="grid grid-cols-1 md:grid-cols-2 px-3 md:px-9 ">
             <div className="content1 my-auto md:ps-10">
               <div className="herotext flex flex-col gap-4 ">
                 <p className="text-yellow-600 text-md font-semibold pt-3">
@@ -98,7 +102,7 @@ const Home = () => {
       </section>
       {/* section 2 */}
       <section>
-        <div className="bg-sky-700 py-11">
+        <div className="bg-sky-700 py-11" data-aos="fade-down">
           <div className="container mx-auto">
             <div className="flex flex-wrap justify-between gap-9 mx-auto px-7 divide-x-2 divide-white">
               <div className="content-one">
@@ -131,7 +135,7 @@ const Home = () => {
       </section>
 
       {/* section3 */}
-      <section className="bg-slate-100">
+      <section className="bg-slate-100" data-aos="fade-up" id="service">
         <div className="container py-6 mx-auto ">
           <div className="header flex flex-wrap flex-col items-center justify-center">
             <p className="text-yellow-500 font-semibold">WHY CHOOSE US</p>
@@ -207,10 +211,10 @@ const Home = () => {
       </section>
 
       {/* section4 */}
-      <div className="bg-slate-100 py-5">
+      <div className="bg-slate-100 py-5" id="about">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 md:px-5 grid-cols-1 gap-8 py-5 container mx-auto">
-            <div className="grid-one rounded-xl mx-5  ">
+            <div className="grid-one rounded-xl mx-5  "  data-aos="fade-right">
               <div className="scheduling-image relative w-full">
                 <img
                   src="https://img.freepik.com/premium-photo/young-pretty-afro-student-woman_1194-200954.jpg?w=740"
@@ -224,7 +228,7 @@ const Home = () => {
                 />
               </div>
             </div>
-            <div className="grid-two md:ps-0 ps-4">
+            <div className="grid-two md:ps-0 ps-4"  data-aos="fade-left">
               <p className="text-yellow-500 font-semibold pb-4  ">
                 CUSTOMIZE WITH YOUR SCHEDULE
               </p>
@@ -252,7 +256,7 @@ const Home = () => {
       <div className="bg-slate-100 py-5">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 grid-cols-1 gap-8 py-5 px-5 md:ps-10 container mx-auto">
-            <div className="grid-two">
+            <div className="grid-two"  data-aos="fade-right">
               <p className="text-yellow-500 font-semibold pb-4">
                 CUSTOMIZE WITH YOUR STUDY PLAN
               </p>
@@ -272,7 +276,7 @@ const Home = () => {
                 Get started
               </button>
             </div>
-            <div className="grid-one ">
+            <div className="grid-one "  data-aos="fade-left">
               <div className="scheduling-image relative">
                 <img
                   src="https://img.freepik.com/premium-photo/portrait-happy-young-teenager-boy-standing-isolated-yellow-wall-carrying-backpack-textbooks-celebrating-success_171337-114643.jpg?w=740"
@@ -310,7 +314,7 @@ const Home = () => {
               </i>
               <p className="text-md">Engineering</p>
             </div>
-            <div className="md:basis-1/4 shrink-0 hover:bg-green-200  basis-1/2 border px-4 py-4 flex flex-row gap-4 items-center rounded-xl">
+            <div className="md:basis-1/4 shrink-0 hover:bg-green-200  basis-1/2 border px-4 py-4 flex flex-row gap-4 items-center rounded-xl" data-aos="fade-down">
               <i>
                 {" "}
                 <FontAwesomeIcon
@@ -320,7 +324,7 @@ const Home = () => {
               </i>
               <p className="text-md">Programming</p>
             </div>
-            <div className="md:basis-1/4 shrink-0 hover:bg-purple-200 basis-1/2 border px-4 py-4 flex flex-row gap-4 items-center rounded-xl">
+            <div className="md:basis-1/4 shrink-0 hover:bg-purple-200 basis-1/2 border px-4 py-4 flex flex-row gap-4 items-center rounded-xl" data-aos="fade-down">
               <i>
                 {" "}
                 <FontAwesomeIcon
@@ -350,7 +354,7 @@ const Home = () => {
               </i>
               <p className="text-md">History</p>
             </div>
-            <div className="md:basis-1/4 shrink-0 basis-1/2 border hover:bg-lime-200 px-4 py-4 flex flex-row gap-4 items-center rounded-xl">
+            <div className="md:basis-1/4 shrink-0 basis-1/2 border hover:bg-lime-200 px-4 py-4 flex flex-row gap-4 items-center rounded-xl" data-aos="fade-up">
               <i>
                 {" "}
                 <FontAwesomeIcon
@@ -360,7 +364,7 @@ const Home = () => {
               </i>
               <p className="text-md">Psycology</p>
             </div>
-            <div className="md:basis-1/4 shrink-0 basis-1/2 border hover:bg-yellow-200 px-4 py-4 flex flex-row gap-4 items-center rounded-xl">
+            <div className="md:basis-1/4 shrink-0 basis-1/2 border hover:bg-yellow-200 px-4 py-4 flex flex-row gap-4 items-center rounded-xl" data-aos="fade-up">
               <i>
                 {" "}
                 <FontAwesomeIcon

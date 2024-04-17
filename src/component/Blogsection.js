@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuoteLeft,faQuoteRight,faStar } from '@fortawesome/free-solid-svg-icons';
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
 
 const BlogSection = () => {
+    useEffect(() =>{
+      AOS.init({duration: 2000})
+    })
   const initialProfileId = 1; // Set the initial profile ID here
   const [selectedProfile, setSelectedProfile] = useState(initialProfileId);
 
@@ -60,7 +67,7 @@ const BlogSection = () => {
           </div>
         ))}
       </div>
-      <div className="mt-4 px-2 md:w-1/3 mx-auto container shadow-md py-2 mb-4">
+      <div className="mt-4 px-2 md:w-1/3 mx-auto container shadow-md py-2 mb-4" data-aos="fade-down">
         {profiles.map(profile => (
           <div key={profile.id} className={`${selectedProfile === profile.id ? 'block' : 'hidden'}`} >
             <h6 className='text-xl font-semibold text-center'>{profile.name}</h6>

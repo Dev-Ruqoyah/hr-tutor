@@ -1,5 +1,6 @@
 
-import Navbar from './component/Navbar';
+// import Navbar from './component/Navbar';
+import { Component } from './component/Navbar';
 import Home from './component/Home';
 import './index.css';
 import React from 'react';
@@ -9,7 +10,8 @@ import Footer from './component/footer';
 function App() {
   return (
     <div className="App">
-      <Navbar></Navbar>
+      <Component></Component>
+      {/* <Navbar></Navbar> */}
       <Home></Home>
       <BlogSection></BlogSection>
       <Footer></Footer>
